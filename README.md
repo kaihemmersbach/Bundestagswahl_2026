@@ -63,5 +63,3 @@ Ein modernes, interaktives Web-Dashboard zur Visualisierung und Analyse der Erge
 
 ---
 
-
-* **Sicherheitshinweis:** Für den produktiven Einsatz empfiehlt es sich, den öffentlichen Mapbox-Token im Mapbox-Dashboard über URL-Restrictions auf die eigene Domain zu beschränken.
