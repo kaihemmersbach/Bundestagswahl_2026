@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bundestagswahl-Dashboard</title>
+
+  <!--==============================================ICONS+FONTS==============================================-->
+  <!--====================================ROBOTO/NOTO-FONTS====================================-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <!--====================================MATERIAL_SYMBOLS_SHARP-ICONS====================================-->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+  <!--==============================================CSS-LIBRARIES==============================================-->
+
+  <!--====================================LEAFLET-CSS====================================-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+  <!--====================================MAPBOX-CSS====================================-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@highcharts/grid-lite/css/grid.css"/>
+
+  <!--==============================================CUSTOM-CSS==============================================-->
+  <!--====================================Dasboard-CSS====================================-->
+  <link href="../dashboard-2.css" rel="stylesheet">
+  <!--====================================MAPBOX-CSS====================================-->
+
+  <!--====================================MAPBOX-CSS====================================-->
+
+
+
+</head>
+<body>
+<div class="grid-container">
+  <nav id="navbar">
+    <div class="container">
+      <div class="logo-section">
+        <img src="../logo.svg" class="logo">
+        <h2 class="gradient-title">BTW</h2>
+      </div>
+      <div class="search-bar">
+        <span class="material-icons-sharp">search</span>
+        <input type="search" id="wahlkreis-suche" placeholder="Suche nach Wahlkreisen" list="wahlkreis-liste">
+        <datalist id="wahlkreis-liste"></datalist>
+      </div>
+    </div>
+  </nav>
+  <!-- END OF NAVBAR -->
+
+
+
+
+  <main>
+        <section id="intro" class="intro">
+          <div class="intro-container">
+            <span>BUNDESTAGSWAHL 2025</span>
+            <div class="intro-header">
+              <h1>DASHBOARD</h1>
+              <input type="date">
+            </div>
+            <h2>Das sind die wichtigsten Zahlen zur Bundestagswahl:<br>
+              Ergebnisse auf einer Wahlkarte, Wahlbeteiligung, Hochburgen, <br> mögliche Koalitionen, Gewählte - <br>
+              und weitere Auswertungen in interaktiven Grafiken.</h2>
+          </div>
+        </section>
+        <section id="results" class="results">
+          <div class="results-container">
+            <h2>Amtliches Endergebnis</h2>
+            <hr>
+            <div class="wahlbeteiligung">
+              <span class="material-icons-sharp">incomplete_circle</span><span>82,5%</span><p>Wahlbeteiligung (Letzte Wahl 76,3%)</p>
+            </div>
+            <div class="resultchart-container">
+              <div id="results-chart" style="height: 300px; min-width: 200px;"></div>
+              <div class="party-labels">
+                <div class="label-union">
+                  <h4>CDU/CSU</h4>
+                  <p>28,5%</p>
+                </div>
+                <div class="label-afd">
+                  <h4>AFD</h4>
+                  <p>28,5%</p>
+                </div>
+                <div class="label-spd">
+                  <h4>SPD</h4>
+                  <p>28,5%</p></div>
+                <div class="label-gruene">
+                  <h4>Grüne</h4>
+                  <p>28,5%</p></div>
+                <div class="label-linke">
+                  <h4>Linke</h4>
+                  <p>28,5%</p>
+                </div>
+                <div class="label-bsw">
+                  <h4>BSW</h4>
+                  <p>28,5%</p>
+                </div>
+                <div class="label-fdp">
+                  <h4>FDP</h4>
+                  <p>28,5%</p>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </section>
+        <section id="stronghold" class="stronghold">
+          <div class="stronghold-container">
+            <h2> Gewählte Parteien</h2>
+            <div id="union" class="union">
+              <img src="../images/logos/logo.svg" alt="Union">
+            </div>
+            <div id="afd" class="afd">
+              <img src="../images/logos/AFD.svg.png" alt="Union">
+            </div>
+            <div id="spd" class="spd">
+              <img src="../images/logos/SPD.svg.png" alt="Union">
+            </div>
+            <div id="gruene" class="gruene">
+              <img src="../images/logos/Grüne.svg.png" alt="Union">
+            </div>
+            <div id="linke" class="linke">
+              <img src="../images/logos/Die_Linke_logo.svg.png" alt="Union">
+            </div>
+          </div>
+        </section>
+        <section id="map-section" class="map-section">
+          <div class="dashboard-map">
+            <div id="map"></div>
+            <div id="custom-tooltip" style="
+              position: absolute;
+              display: none;
+              pointer-events: none;
+              background: white;
+              border: 1px solid #ccc;
+              padding: 10px;
+              border-radius: 8px;
+              box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+              z-index: 1000;
+              font-size: 13px;
+              min-width: 250px;">
+              <div id="tooltip-info"></div>
+              <div id="tooltip-chart" style="width: 230px; height: 150px;"></div>
+            </div>
+          </div>
+        </section>
+        <section id="seats" class="seats">
+          <div class="seats-container">
+            <div id="seats-semiCircle" style="height: 400px; width: 400px;"></div>
+            <div id="seats-coalition" style="height: 400px; width: 500px;"></div>
+          </div>
+        </section>
+        <section id="table" class="table">
+          <div class="table-container">
+            <div id="myGrid" style="width: 100%; height: 450px"></div>
+          </div>
+        </section>
+    </main>
+</div>
+
+
+
+
+
+
+
+<!--==============================================Custom Javascript==============================================-->
+<!--Mapbox-JS-->
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.13.0/mapbox-gl.js"></script>
+<!--Grid-JS-->
+<script src="https://cdn.jsdelivr.net/npm/ag-grid-community@34.0.1/dist/ag-grid-community.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@highcharts/grid-lite/grid-lite.js"></script>
+<!--AG-Charts-JS-->
+<script src="https://cdn.jsdelivr.net/npm/ag-charts-community/dist/umd/ag-charts-community.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<!--Leaflet-JS-->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+
+<!--==============================================Custom Javascript=============================================-->
+<!--==============Page(Navigation...)==============-->
+<script src="../index.js"></script>
+<!--==============Charts==============-->
+<script src="../charts.js"></script>
+<!--==============Data-Table==============-->
+<script src="../table.js"></script>
+<!--==============Maps==============-->
+<script src="../map.js"></script>
+</body>
+</html>

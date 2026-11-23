@@ -1,0 +1,35 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "deutschland_ergebnisse.fid--7cc1a3f8_197d164a9f3_-5ea9",
+      "geometry": null,
+      "properties": {
+        "Wahlbeteiligung_zweit_2025_percent": 82.5,
+        "Wahlbeteiligung_zweit_2021_percent": 76.3,
+        "CDU_zweit_2025_percent": 22.5,
+        "CDU_zweit_2021_percent": 19,
+        "CSU_zweit_2025_percent": 6,
+        "CSU_zweit_2021_percent": 5.1,
+        "SPD_zweit_2025_percent": 16.4,
+        "SPD_zweit_2021_percent": 25.7,
+        "FDP_zweit_2025_percent": 4.3,
+        "FDP_zweit_2021_percent": 11.4,
+        "GRUENE_zweit_2025_percent": 11.6,
+        "GRUENE_zweit_2021_percent": 14.7,
+        "AFD_zweit_2025_percent": 20.8,
+        "AFD_zweit_2021_percent": 10.4,
+        "Die_Linke_zweit_2025_percent": 8.8,
+        "Die_Linke_zweit_2021_percent": 4.9,
+        "BSW_zweit_2025_percent": 4.9,
+        "BSW_zweit_2021_percent": 0
+      }
+    }
+  ],
+  "totalFeatures": 1,
+  "numberMatched": 1,
+  "numberReturned": 1,
+  "timeStamp": "2025-07-03T18:01:46.561Z",
+  "crs": null
+}
