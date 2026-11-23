@@ -2,7 +2,7 @@
 let activeLayer = null;
 let geoLayer;
 
-const accessToken = 'pk.eyJ1Ijoia3RoOTMiLCJhIjoiY21jbDk4NmNhMDkwMzJqczliNW50NWxvZiJ9.FVdacrfdInJNWuYf1LRONg';
+const accessToken = //MapBox Access Token hier eingeben
 const map = L.map('map', {
     center: [51.1657, 10.4015],  // geografischer Mittelpunkt Deutschlands
     zoom: 7,
