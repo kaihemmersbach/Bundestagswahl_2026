@@ -63,40 +63,5 @@ Ein modernes, interaktives Web-Dashboard zur Visualisierung und Analyse der Erge
 
 ---
 
-## 🚀 Installation & Lokale Ausführung
 
-Da die Anwendung über die `fetch()`-API lokale JSON-Dateien (`deutschland.json` und `wahlkreise.json`) lädt, muss sie über einen lokalen Webserver (und nicht direkt per Doppelklick über `file://`) gestartet werden, um CORS-Blockaden zu vermeiden.
-
-### Voraussetzungen
-* Ein moderner Webbrowser (Chrome, Firefox, Edge, Safari)
-* Ein lokaler Entwicklungsserver (z. B. VS Code *Live Server*, Python oder Node.js)
-* Ein gültiger **Mapbox Access Token** (hinterlegt in `map.js`)
-
-### Schritte zum Starten
-
-1. **Repository klonen oder Dateien herunterladen:**
-   ```bash
-   git clone <dein-repository-url>
-   cd <projekt-ordner>
-   ```
-
-2. **Mapbox-Token prüfen (optional):**
-   Öffne die Datei `map.js` und stelle sicher, dass in Zeile 5 ein aktiver Mapbox API-Token hinterlegt ist:
-   ```javascript
-   const accessToken = 'DEIN_MAPBOX_ACCESS_TOKEN';
-   ```
-
-3. **Lokalen Server starten:**
-   * **Mit VS Code:** Rechtsklick auf `Dashboard_2.html` $\rightarrow$ *"Open with Live Server"*.
-   * **Mit Python 3:**
-     ```bash
-     python -m http.server 8000
-     ```
-     Anschließend im Browser `http://localhost:8000/Dashboard_2.html` aufrufen.
-
----
-
-## 📝 Hinweise zu den Daten & Bekannte Punkte
-
-* **Datenformat:** Die Anwendungen erwarten spezifische Property-Namen in den GeoJSON-Dateien (z. B. `Wahlkreis_Nr`, `Wahlbeteiligung_Percent_2025`, `CDU/CSU_Percent_2025`).
 * **Sicherheitshinweis:** Für den produktiven Einsatz empfiehlt es sich, den öffentlichen Mapbox-Token im Mapbox-Dashboard über URL-Restrictions auf die eigene Domain zu beschränken.
