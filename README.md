@@ -38,16 +38,27 @@ Ein modernes, interaktives Web-Dashboard zur Visualisierung und Analyse der Erge
 ## 📁 Projektstruktur
 
 ```text
-├── Dashboard_2.html        # Haupt-HTML-Datei (Layout & Einbindung der Bibliotheken)
-├── dashboard-2.css         # Styling, CSS-Grid-Layout und Farbvariablen der Parteien
+├── .idea/                  # IDE-Konfigurationsdateien
+├── images/                 # Bild- und Grafik-Assets des Projekts
+│   ├── icons/              # Benutzeroberflächen- und Karten-Icons
+│   ├── logos/              # Parteilogos (Union, AfD, SPD, Grüne, Die Linke etc.)
+│   └── wahlkreise.svg      # Vektorgrafik der deutschen Wahlkreise
+├── node_modules/           
+├── pages/                  # HTML-Seiten und zugehörige GeoJSON-Datensätze
+│   ├── Dashboard_2.html    # Haupt-HTML-Dokument des Dashboards
+│   ├── deutschland.json    # Aggregierte Wahldaten auf Bundesebene (2021 & 2025)
+│   └── wahlkreise.json     # GeoJSON-Polygone und Wahldaten der einzelnen Wahlkreise
+├── Demo_WebApp.png         
+├── README.md               # Projektdokumentation
 ├── charts.js               # Logik für Highcharts (Endergebnis, Sitzverteilung, Koalitionen)
-├── map.js                  # Leaflet-Karteninitialisierung, GeoJSON-Layer, Suche & Hover-Tooltips
-├── table.js                # Konfiguration und Daten-Mapping für die AG Grid Tabelle
-├── deutschland.json        # Aggregierte Wahldaten auf Bundesebene (2021 & 2025)
-├── wahlkreise.json         # GeoJSON-Polygone und Wahldaten der einzelnen Wahlkreise
+├── dashboard-2.css         # Stylesheet für das CSS-Grid-Layout, Farbschema und UI-Komponenten
+├── img.png                 # Zusätzliches Bild-Asset
 ├── logo.svg                # Hauptlogo der Anwendung
-└── images/
-    └── logos/              # Parteilogos (Union, AfD, SPD, Grüne, Die Linke)
+├── map.js                  # Leaflet-Karteninitialisierung, GeoJSON-Layer, Suche & Hover-Tooltips
+├── package-lock.json       
+├── package.json            
+├── profil.jpg              
+└── table.js                # Konfiguration und Daten-Mapping für die AG Grid Tabelle
 ```
 
 ---
