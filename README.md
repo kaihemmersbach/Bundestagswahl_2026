@@ -2,7 +2,7 @@
 
 Ein modernes, interaktives Web-Dashboard zur Visualisierung und Analyse der Ergebnisse der Deutschen Bundestagswahl 2025. Die Anwendung kombiniert geografische Daten mit interaktiven Diagrammen und einer durchsuchbaren Datentabelle, um Wahlergebnisse auf Bundes- und Wahlkreisebene übersichtlich darzustellen.
 
-![Dashboard Vorschau](./2BFAE1BF-27CF-48F8-B61E-9FC855724315.png)
+![Dashboard Vorschau](./Demo_WebApp.png)
 
 ---
 
